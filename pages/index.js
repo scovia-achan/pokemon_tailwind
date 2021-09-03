@@ -11,7 +11,7 @@ export default function Home({ pokeman }) {
         {pokeman.map((pokemon, index) => (
           <li key={index}>
             <Link href={`/pokemon?id=${index + 1}`}>
-              <a className="border p-4 border-gray my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md">
+              <a className="border p-4 border-gray my-2 capitalize flex items-center text-lg bg-gray-200 rounded-md hover:bg-gray-350">
                 <img
                   className="w-20 h-20 mr-3"
                   src={pokemon.image}
@@ -30,7 +30,7 @@ export default function Home({ pokeman }) {
 
 export async function getStaticProps() {
   try {
-    const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150");
+    const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
     const { results } = await data.json();
     const pokeman = results.map((result, index) => {
       const paddedIndex = ("00" + (index + 1)).slice(-3);

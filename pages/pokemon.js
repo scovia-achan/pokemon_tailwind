@@ -6,14 +6,18 @@ export default function pokemon({ pokeman }) {
   console.log(pokeman);
   return (
     <Layout title="single Pokeman">
-      <h1>{pokeman.name}</h1>
-      <img className="mx-auto" src={pokeman.image} alt={pokeman.name} />
-      <p>
-        <span className="mt-4 font-bold">Weight: {pokeman.weight}</span>
-      </p>
-      <p>
-        <span className="mt-5 font-bold">Height: {pokeman.height}</span>
-      </p>
+      <div className="border rounded">
+        <h1 className="font-bold text-3xl text-center text-blue-700 capitalize">
+          {pokeman.name}
+        </h1>
+        <img className="mx-auto" src={pokeman.image} alt={pokeman.name} />
+        <p>
+          <span className="mt-4 font-bold">Weight: {pokeman.weight}</span>
+        </p>
+        <p>
+          <span className="mt-5 font-bold">Height: {pokeman.height}</span>
+        </p>
+      </div>
     </Layout>
   );
 }
